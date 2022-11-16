@@ -1,38 +1,79 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  background: hsl(206, 83%, 23%);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 801px) {
+  .box {
+    position: relative;
+    width: 40vw;
+    height: 10vw;
+    margin: 2vw auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.grid-resistor {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-resistor {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 33% 33% 33%;
+  grid-template-areas: " . resistor_body . " " lead1 resistor_body lead2 " ". resistor_body . ";
+}
+
+.resistor_body {
+  display: grid;
+  grid-template-columns: 8% 9% 8% 9% 8% 9% 15% 9%;
+  grid-template-areas: ". band1 . band2 . band3 . band4.";
+  grid-area: resistor_body;
+  background: brown;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+
+.band1 {
+  grid-area: band1;
+  background: black;
+}
+
+.band2 {
+  grid-area: band2;
+  background: black;
+}
+
+.band3 {
+  grid-area: band3;
+  background: black;
+}
+
+.band4 {
+  grid-area: band4;
+  background: gold;
+}
+
+.lead1 {
+  grid-area: lead1;
+  background: #aabfd0;
+}
+
+.lead2 {
+  grid-area: lead2;
+  background: #aabfd0;
+}
+
+.outBanner {
+  font-family: "Roboto", sans-serif;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+h1 {
+  color: white;
+  text-shadow: 2px 2px black;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  text-decoration: underline;
 }

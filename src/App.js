@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Resistor from "./components/Resistor.jsx";
+import Header from "./components/Header.jsx";
+import Result from "./components/Result.jsx";
+import DataTable from "./components/DataTable.jsx";
+import { useState } from "react";
+import ParticlesBg from "particles-bg";
 
-function App() {
+export default function App() {
+  const [firstBand, setFirstBand] = useState(0);
+  const [secondBand, setSecondBand] = useState(0);
+  const [thirdBand, setThirdBand] = useState(0);
+  const [fourthBand, setFourthBand] = useState("10");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Resistor
+        setFirstBand={setFirstBand}
+        setSecondBand={setSecondBand}
+        setThirdBand={setThirdBand}
+        setFourthBand={setFourthBand}
+      />
+      <Result
+        firstBand={firstBand}
+        secondBand={secondBand}
+        thirdBand={thirdBand}
+        fourthBand={fourthBand}
+      />
+      <DataTable />
+      <ParticlesBg color="random" type="cobweb" bg={true} />
     </div>
   );
 }
-
-export default App;
